@@ -1,0 +1,61 @@
+{% extends 'Base.html' %}
+
+<!-- bg? -->
+
+{% block title %} | Register {% endblock %}
+<!-- nn -->
+
+{% block content %} {% load humanize%}
+<!-- Sub banner start -->
+
+<div class="sub-banner overview-bgi">
+  <div class="container breadcrumb-area">
+    <div class="breadcrumb-areas">
+      <h1>Our Car Inventory</h1>
+      <ul class="breadcrumbs">
+        <li><a href="{% url 'homepage'%}">Home</a></li>
+        <li class="active">Cars</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+{% include 'includes/messages.html'%}
+
+<!-- Sub Banner end -->
+<div class="container mt-50 mb-50">
+  <div class="main-title" style="text-align: left !important">
+    <h1>Welcome <span>User</span></h1>
+    <p>Here are the cars that you have inquired about</p>
+  </div>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Car Name</th>
+        <th scope="col">Location</th>
+
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for i in inquery %}
+      <tr>
+        <th scope="row">{{i.car_id}}</th>
+        <td>{{i.car_title}}</td>
+        <td>{{i.city}}</td>
+
+        <td>
+          <a
+            href="{% url 'car_details' i.car_id %}"
+            class="btn btn-outline-dark"
+            >View Car</a
+          >
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+{% endblock %}
