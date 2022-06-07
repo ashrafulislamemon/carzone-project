@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-uo2_yl$sft=rdodca0p1m^4)37jkrx2f!=#y0g$b(&86_^r-pj
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['safe-savannah-88842.herokuapp.com']
 LOGIN_REDIRECT_URL ='dashboard'
 
 
